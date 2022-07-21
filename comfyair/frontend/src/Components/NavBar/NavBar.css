@@ -65,6 +65,18 @@
     text-decoration: underline;
 }
 
+    .nav-active{
+        color: #09aeb8;
+        text-decoration: underline;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+        .nav-active:hover{
+            color: #09aeb8;
+            text-decoration: underline;
+        }
+
 .navbar-btn_container{
     width: 23%;
     display: flex;

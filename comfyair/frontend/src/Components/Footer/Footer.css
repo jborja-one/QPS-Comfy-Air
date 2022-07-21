@@ -27,7 +27,7 @@
 
 .footer-btn{
     display: flex;
-    justify-content: flex-end;
+    justify-content:center;
     margin-right: 5px;
 }
 
@@ -39,9 +39,13 @@
 
 .footer-input{
     margin: 10px;
-    padding: 10px;
+    /*padding: 10px; */
     border: 2px solid #09aeb8;
     border-radius: 10px;
+}
+
+.half-input{
+    width: 45%;
 }
 
     input:focus{

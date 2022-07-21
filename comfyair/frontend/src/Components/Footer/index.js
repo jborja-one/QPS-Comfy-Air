@@ -58,7 +58,7 @@ function Footer() {
 							</h4>
 						</div>
 					</div>
-					<div className='footer-content_right col'>
+					{/* <div className='footer-content_right col'>
 						<h4 className='md-text bold-text my-3'>
 							Get a Free Quote
 						</h4>
@@ -93,7 +93,7 @@ function Footer() {
 								</div>
 							</div>
 						</form>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

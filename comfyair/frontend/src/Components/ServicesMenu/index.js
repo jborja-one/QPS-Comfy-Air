@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './ServicesMenu.css';
 import User from '../../images/user.jpeg';
 
@@ -6,9 +7,11 @@ function ServicesMenu() {
 	return (
 		<div className='container'>
 			<div className='menu-container d-flex flex-column mt-100'>
-				<a
-					className='services-menu_links'
-					href='/services-cooling/#cooling'>
+				<NavLink
+					className={({ isActive }) =>
+						isActive ? 'menu-active' : 'services-menu_links'
+					}
+					to='/services-cooling/#cooling'>
 					COOLING SERVICES
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -26,8 +29,12 @@ function ServicesMenu() {
 							d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z'
 						/>
 					</svg>
-				</a>
-				<a className='services-menu_links' href='/services-heating'>
+				</NavLink>
+				<NavLink
+					className={({ isActive }) =>
+						isActive ? 'menu-active' : 'services-menu_links'
+					}
+					to='/services-heating'>
 					HEATING SERVICES
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -45,8 +52,12 @@ function ServicesMenu() {
 							d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z'
 						/>
 					</svg>
-				</a>
-				<a className='services-menu_links' href='/services-maintenance'>
+				</NavLink>
+				<NavLink
+					className={({ isActive }) =>
+						isActive ? 'menu-active' : 'services-menu_links'
+					}
+					to='/services-maintenance'>
 					MAINTENANCE & REPAIR
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -64,8 +75,12 @@ function ServicesMenu() {
 							d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z'
 						/>
 					</svg>
-				</a>
-				<a className='services-menu_links' href='/services-diagnostics'>
+				</NavLink>
+				<NavLink
+					className={({ isActive }) =>
+						isActive ? 'menu-active' : 'services-menu_links'
+					}
+					to='/services-diagnostics'>
 					DIAGNOSTICS
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -83,7 +98,7 @@ function ServicesMenu() {
 							d='M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z'
 						/>
 					</svg>
-				</a>
+				</NavLink>
 			</div>
 			<div className='container services-menu_img'>
 				<img className='img-fluid' src={User} />

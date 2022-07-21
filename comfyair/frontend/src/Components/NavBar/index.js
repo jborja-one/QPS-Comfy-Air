@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { reset, logout, login } from '../../features/auth/authSlice';
 import Spinner from '../Spinner/index';
@@ -171,22 +172,43 @@ function NavBar() {
 						className='navbar-collapse navbar-links_container'
 						id='collapsibleNavbar'>
 						<div className='navbar-box'>
-							<a className='navbar_links' tabindex='1' href='/'>
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? 'nav-active' : 'navbar_links'
+								}
+								// activeClassName='nav-active'
+								tabindex='1'
+								to='/'>
 								Home
-							</a>
-							<a className='navbar_links' href='/about'>
+							</NavLink>
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? 'nav-active' : 'navbar_links'
+								}
+								to='/about'>
 								About Us
-							</a>
+							</NavLink>
 							{/* <a className='navbar_links' href='/services'>
 								Services
 							</a> */}
-							<a
-								className='dropdown dropdown-toggle navbar_links'
+							<NavLink
+								to={
+									'/services-cooling' ||
+									'/services-heating' ||
+									'/services-maintenance' ||
+									'/services-diagnostics'
+								}
+								// className='dropdown dropdown-toggle navbar_links'
+								className={({ isActive }) =>
+									isActive
+										? 'nav-active dropdown dropdown-toggle'
+										: 'navbar_links dropdown dropdown-toggle'
+								}
 								type='button'
 								data-bs-toggle='dropdown'
 								aria-expanded='false'>
 								Services
-							</a>
+							</NavLink>
 							<ul class='dropdown-menu'>
 								<li>
 									<a
@@ -217,9 +239,13 @@ function NavBar() {
 									</a>
 								</li>
 							</ul>
-							<a className='navbar_links' href='/contact-us'>
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? 'nav-active' : 'navbar_links'
+								}
+								to='/contact-us'>
 								Contact Us
-							</a>
+							</NavLink>
 							<div className='navbar-btn_container'>
 								<a
 									className='navbar-btn_book bold-text'
