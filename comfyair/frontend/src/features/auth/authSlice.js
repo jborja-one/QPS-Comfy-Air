@@ -21,8 +21,8 @@ export const register = createAsyncThunk(
 		} catch (error) {
 			const message =
 				(error.response &&
-					error.response.date &&
-					error.response.date.message) ||
+					error.response.data &&
+					error.response.data.message) ||
 				error.message ||
 				error.toString();
 			return thunkAPI.rejectWithValue({ message });

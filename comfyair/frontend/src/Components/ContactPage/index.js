@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { reset, createMessage } from '../../features/messages/messagesSlice';
 import NavBar from '../NavBar';
 import WhyChooseUs from '../WhyChooseUs';
 import InfoCards from '../InfoCards';
@@ -8,16 +12,61 @@ import User from '../../images/user.jpeg';
 import './ContactPage.css';
 
 function ContactPage() {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const { formMessage, isError, isSuccess, isLoading, errorMessage } =
+		useSelector((state) => state.messages);
+
+	const [formData, setFormData] = useState({
+		fullName: '',
+		phoneNumber: '',
+		email: '',
+		service: '',
+		message: '',
+	});
+
+	const { fullName, phoneNumber, email, service, message } = formData;
+
+	const onChange = (e) => {
+		setFormData((prevState) => ({
+			...prevState,
+			[e.target.name]: e.target.value,
+		}));
+	};
+
+	useEffect(() => {
+		if (isError) {
+			toast.error(errorMessage);
+		}
+
+		// if (isSuccess || user) {
+		// 	navigate('/');
+		// }
+
+		dispatch(reset());
+	}, [formMessage, isError, isSuccess, errorMessage, navigate, dispatch]);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		dispatch(
+			createMessage({
+				fullName,
+				phoneNumber,
+				email,
+				service,
+				message,
+			})
+		);
+		toast.success('Message sent successfully');
+	};
+
 	return (
 		<>
 			<NavBar />
-			<div className='header-container'>
-				<div className='header-img_container'>
-					<img
-						class='img-fluid position-relative'
-						src={ContactHeaher}
-						alt='logo'
-					/>
+			<div className='header-container position-relative'>
+				<div className='header-img_container '>
+					<img class='img-fluid' src={ContactHeaher} alt='logo' />
 					<h1 className='contact-header_title position-absolute bold-text'>
 						Contact Us
 					</h1>
@@ -54,11 +103,14 @@ function ContactPage() {
 								To request a service call <br></br>please fill
 								out the form below
 							</h3>
-							<form>
+							<form onSubmit={handleSubmit}>
 								<div className='d-flex w-100 justify-content-between '>
 									<div class='form-floating w-100'>
 										<input
 											type='text'
+											name='fullName'
+											value={fullName}
+											onChange={onChange}
 											class='form-control form-input'
 											id='floatingInput'
 											placeholder='Full Name'
@@ -70,6 +122,9 @@ function ContactPage() {
 									<div class='form-floating w-100'>
 										<input
 											type='text'
+											name='phoneNumber'
+											value={phoneNumber}
+											onChange={onChange}
 											class='form-control form-input'
 											id='floatingPhone'
 											placeholder='Enter Your Phone Number'
@@ -82,6 +137,9 @@ function ContactPage() {
 								<div class='form-floating my-4 w-100'>
 									<input
 										type='email'
+										name='email'
+										value={email}
+										onChange={onChange}
 										class='form-control form-input'
 										id='floatingEmail'
 										placeholder='Email'
@@ -92,6 +150,9 @@ function ContactPage() {
 								</div>
 								<div class='form-floating my-4'>
 									<select
+										name='service'
+										value={service}
+										onChange={onChange}
 										class='form-select form-input'
 										id='floatingSelect'
 										aria-label='Floating label select example'>
@@ -114,6 +175,9 @@ function ContactPage() {
 								<div class='form-floating'>
 									<textarea
 										class='form-control form-input'
+										name='message'
+										value={message}
+										onChange={onChange}
 										placeholder='Your Message Here ...'
 										id='floatingTextarea'></textarea>
 									<label for='floatingTextarea'>
@@ -121,7 +185,9 @@ function ContactPage() {
 									</label>
 								</div>
 								<div className='footer-btn'>
-									<button className='footer-btn md-btn mt-3'>
+									<button
+										className='footer-btn md-btn mt-3'
+										type='submit'>
 										Submit
 									</button>
 								</div>

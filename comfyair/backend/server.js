@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 const userRoutes = require('./routes/userRoutes');
+const messagesRoutes = require('./routes/messagesRoutes');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 
@@ -20,6 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/users', userRoutes);
+app.use('/api/messages', messagesRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
