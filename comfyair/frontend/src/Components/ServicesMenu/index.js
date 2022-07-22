@@ -6,7 +6,7 @@ import User from '../../images/user.jpeg';
 function ServicesMenu() {
 	return (
 		<div className='container'>
-			<div className='menu-container d-flex flex-column mt-100'>
+			<div className='menu-container d-flex flex-column mt-100 position-relative'>
 				<NavLink
 					className={({ isActive }) =>
 						isActive ? 'menu-active' : 'services-menu_links'
@@ -34,7 +34,7 @@ function ServicesMenu() {
 					className={({ isActive }) =>
 						isActive ? 'menu-active' : 'services-menu_links'
 					}
-					to='/services-heating'>
+					to='/services-heating/#heating'>
 					HEATING SERVICES
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -57,7 +57,7 @@ function ServicesMenu() {
 					className={({ isActive }) =>
 						isActive ? 'menu-active' : 'services-menu_links'
 					}
-					to='/services-maintenance'>
+					to='/services-maintenance/#maintenance'>
 					MAINTENANCE & REPAIR
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
@@ -80,7 +80,7 @@ function ServicesMenu() {
 					className={({ isActive }) =>
 						isActive ? 'menu-active' : 'services-menu_links'
 					}
-					to='/services-diagnostics'>
+					to='/services-diagnostics/#diagnostics'>
 					DIAGNOSTICS
 					<svg
 						xmlns='http://www.w3.org/2000/svg'

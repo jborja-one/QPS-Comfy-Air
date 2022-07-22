@@ -27,7 +27,7 @@ function ServiceMaintenancePage() {
 				</div>
 			</div>
 			<div className='container'>
-				<div className='row'>
+				<div className='row' id='maintenance'>
 					<div className='col-md-4'>
 						<ServicesMenu />
 					</div>

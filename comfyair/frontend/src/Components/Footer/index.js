@@ -58,42 +58,75 @@ function Footer() {
 							</h4>
 						</div>
 					</div>
-					{/* <div className='footer-content_right col'>
-						<h4 className='md-text bold-text my-3'>
-							Get a Free Quote
-						</h4>
-						<h3 className='md-text light-text footer-form_subtitle mb-3'>
-							To request a service call <br></br>please fill out
-							the form below
-						</h3>
-						<form>
-							<div className='form-group d-flex flex-column my-3'>
-								<div className=''>
-									<input
-										className='footer-input'
-										placeholder='Full Name'
-									/>
-									<input
-										className='footer-input'
-										placeholder='Phone Number'
-									/>
-								</div>
-								<input
-									className='footer-input'
-									placeholder='Email'
-								/>
-								<textarea
-									className='footer-input footer-textarea'
-									placeholder='Enter your query ...'
-								/>
-								<div className='footer-btn'>
-									<button className='footer-btn sm-btn mt-3'>
-										Submit
-									</button>
-								</div>
+					<div className='footer-content_right col mt-5'>
+						<h2 className='lg-text reg-text'>Quick Links</h2>
+						<div className='d-flex w-100 justify-content-end'>
+							<div className='d-flex my-3'>
+								<ul className='footer-ul'>
+									<li>
+										<a className='footer-links' href='/'>
+											Home
+										</a>
+									</li>
+									<li>
+										<a
+											className='footer-links'
+											href='/contact-us'>
+											Contact Us
+										</a>
+									</li>
+								</ul>
 							</div>
-						</form>
-					</div> */}
+							<div className='d-flex my-3'>
+								<ul className='footer-ul'>
+									<li>
+										<a
+											className='footer-links'
+											href='/about'>
+											About
+										</a>
+									</li>
+									<li>
+										<a
+											className='footer-links'
+											href='/services-cooling/#cooling'>
+											Services
+										</a>
+										<ul>
+											<li>
+												<a
+													className='footer-links'
+													href='/services-cooling/#cooling'>
+													Cooling Services
+												</a>
+											</li>
+											<li>
+												<a
+													className='footer-links'
+													href='/services-heating/#heating'>
+													Heating Services
+												</a>
+											</li>
+											<li>
+												<a
+													className='footer-links'
+													href='/services-maintenance/#maintenance'>
+													Maintenance & Repair
+												</a>
+											</li>
+											<li>
+												<a
+													className='footer-links'
+													href='/services-diagnostics/#diagnostics'>
+													Diagnostic Services
+												</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

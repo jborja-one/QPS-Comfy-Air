@@ -34,7 +34,7 @@ function HomePage() {
 					</div>
 				</div>
 			</div>
-			<div>
+			<div className='home-infocards'>
 				<InfoCards />
 			</div>
 			<div className='home-about_container container my-100 d-flex justify-content-around'>

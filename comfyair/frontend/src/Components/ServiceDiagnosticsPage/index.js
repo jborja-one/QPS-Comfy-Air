@@ -32,7 +32,7 @@ function ServiceDiagnosticsPage() {
 					</div>
 					<div className='col-md-8'>
 						<div className='service-page_content'>
-							<div className='row'>
+							<div className='row' id='diagnostics'>
 								<div className='col-md-6 mt-4'>
 									<img
 										className='img-fluid'

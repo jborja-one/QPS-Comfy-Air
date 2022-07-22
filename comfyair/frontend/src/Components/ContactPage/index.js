@@ -47,7 +47,7 @@ function ContactPage() {
 					</div>
 					<div className='col-md-6'>
 						<div className=''>
-							<h4 className='md-text bold-text my-3 text-center'>
+							<h4 className='lg-text reg-text text-center mb-3'>
 								Get a Free Quote
 							</h4>
 							<h3 className='md-text light-text text-center footer-form_subtitle mb-3'>
@@ -55,13 +55,13 @@ function ContactPage() {
 								out the form below
 							</h3>
 							<form>
-								<div className='d-flex w-100 justify-content-between'>
-									<div class='form-floating mb-3 w-100'>
+								<div className='d-flex w-100 justify-content-between '>
+									<div class='form-floating w-100'>
 										<input
 											type='text'
-											class='form-control'
+											class='form-control form-input'
 											id='floatingInput'
-											placeholder='name'
+											placeholder='Full Name'
 										/>
 										<label for='floatingInput'>
 											Full Name
@@ -70,19 +70,19 @@ function ContactPage() {
 									<div class='form-floating w-100'>
 										<input
 											type='text'
-											class='form-control'
+											class='form-control form-input'
 											id='floatingPhone'
-											placeholder='Password'
+											placeholder='Enter Your Phone Number'
 										/>
 										<label for='floatingPhone'>
 											Phone Number
 										</label>
 									</div>
 								</div>
-								<div class='form-floating  mb-3  w-100'>
+								<div class='form-floating my-4 w-100'>
 									<input
 										type='email'
-										class='form-control'
+										class='form-control form-input'
 										id='floatingEmail'
 										placeholder='Email'
 									/>
@@ -90,37 +90,38 @@ function ContactPage() {
 										Email Address
 									</label>
 								</div>
-								<div class='form-floating'>
+								<div class='form-floating my-4'>
 									<select
-										class='form-select'
+										class='form-select form-input'
 										id='floatingSelect'
 										aria-label='Floating label select example'>
-										<option selected>
+										<option defaultValue='selected'>
 											What do you need help with?
 										</option>
-										<option value='1'>Cooling</option>
-										<option value='2'>Heating</option>
-										<option value='3'>
+										<option value='cooling'>Cooling</option>
+										<option value='heating'>Heating</option>
+										<option value='maintenance'>
 											Maintenance & Repair
 										</option>
-										<option value='3'>Diagnostics</option>
+										<option value='diagnostic'>
+											Diagnostics
+										</option>
 									</select>
 									<label for='floatingSelect'>
 										Select a Service
 									</label>
 								</div>
-								{/* <div class='form-floating'>
+								<div class='form-floating'>
 									<textarea
-										class='form-control'
-										placeholder='Leave a comment here'
-										id='floatingTextarea2'
-										style='height: 100px'></textarea>
-									<label for='floatingTextarea2'>
+										class='form-control form-input'
+										placeholder='Your Message Here ...'
+										id='floatingTextarea'></textarea>
+									<label for='floatingTextarea'>
 										How can we help? ...
 									</label>
-								</div> */}
+								</div>
 								<div className='footer-btn'>
-									<button className='footer-btn lg-btn mt-3'>
+									<button className='footer-btn md-btn mt-3'>
 										Submit
 									</button>
 								</div>

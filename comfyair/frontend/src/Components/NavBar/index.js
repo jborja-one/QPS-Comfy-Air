@@ -213,28 +213,28 @@ function NavBar() {
 								<li>
 									<a
 										class='dropdown-item light-text'
-										href='/services-cooling'>
+										href='/services-cooling/#cooling'>
 										Cooling Services
 									</a>
 								</li>
 								<li>
 									<a
 										class='dropdown-item light-text'
-										href='/services-heating'>
+										href='/services-heating/#heating'>
 										Heating Services
 									</a>
 								</li>
 								<li>
 									<a
 										class='dropdown-item light-text'
-										href='/services-maintenance'>
+										href='/services-maintenance/#maintenance'>
 										Maintenance & Repairs
 									</a>
 								</li>
 								<li>
 									<a
 										class='dropdown-item light-text'
-										href='/services-diagnostics'>
+										href='/services-diagnostics/#diagnostics'>
 										Diagnostics
 									</a>
 								</li>
