@@ -48,7 +48,7 @@ export const messageSlice = createSlice({
 			})
 			.addCase(createMessage.fulfilled, (state, action) => {
 				state.isLoading = false;
-				state.isSuccess = true;
+				state.isSuccess = { true: () => undefined };
 				state.formMessage = action.payload;
 			})
 			.addCase(createMessage.rejected, (state, action) => {

@@ -9,6 +9,7 @@ import InfoCards from '../InfoCards';
 import Footer from '../Footer';
 import ContactHeaher from '../../images/contact-header.jpeg';
 import User from '../../images/user.jpeg';
+import emailjs from '@emailjs/browser';
 import './ContactPage.css';
 
 function ContactPage() {
@@ -59,6 +60,20 @@ function ContactPage() {
 			})
 		);
 		toast.success('Message sent successfully');
+		setFormData({
+			fullName: '',
+			phoneNumber: '',
+			email: '',
+			service: '',
+			message: '',
+		});
+
+		emailjs.sendForm(
+			'service_hehbavc',
+			'template_50ko7sd',
+			e.target,
+			'eI07DrI2A9b126Ij8'
+		);
 	};
 
 	return (
@@ -114,6 +129,7 @@ function ContactPage() {
 											class='form-control form-input'
 											id='floatingInput'
 											placeholder='Full Name'
+											required
 										/>
 										<label for='floatingInput'>
 											Full Name
@@ -128,6 +144,7 @@ function ContactPage() {
 											class='form-control form-input'
 											id='floatingPhone'
 											placeholder='Enter Your Phone Number'
+											required
 										/>
 										<label for='floatingPhone'>
 											Phone Number
@@ -143,6 +160,7 @@ function ContactPage() {
 										class='form-control form-input'
 										id='floatingEmail'
 										placeholder='Email'
+										required
 									/>
 									<label for='floatingPassword'>
 										Email Address
@@ -155,7 +173,8 @@ function ContactPage() {
 										onChange={onChange}
 										class='form-select form-input'
 										id='floatingSelect'
-										aria-label='Floating label select example'>
+										aria-label='Floating label select example'
+										required>
 										<option defaultValue='selected'>
 											What do you need help with?
 										</option>
@@ -179,7 +198,8 @@ function ContactPage() {
 										value={message}
 										onChange={onChange}
 										placeholder='Your Message Here ...'
-										id='floatingTextarea'></textarea>
+										id='floatingTextarea'
+										required></textarea>
 									<label for='floatingTextarea'>
 										How can we help? ...
 									</label>
