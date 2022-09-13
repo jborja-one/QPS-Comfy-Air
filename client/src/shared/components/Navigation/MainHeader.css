@@ -1,0 +1,13 @@
+@media screen and (max-width: 768px) {
+    .main-header{
+        position: absolute;
+        right: 516px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-header{
+        position: absolute;
+        right: 256px;
+    }
+}

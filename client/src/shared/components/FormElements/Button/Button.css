@@ -1,0 +1,31 @@
+.btn{
+	font-family: 'kumbh Sans', sans-serif;
+	font-size: 21px;
+	padding: 30px 45px;
+	border: none;
+	background-color: #ffd764;
+	color: black;
+	text-decoration: none;
+}
+
+	.btn:hover{
+		color: white;
+		background-color: #09aeb8;
+		text-decoration: none;
+	}
+
+.btn--inverse{
+    font-family: 'kumbh Sans', sans-serif;
+    font-size: 21px;
+    padding: 30px 45px;
+    border: none;
+    background-color: #09aeb8;
+    color: white;
+    text-decoration: none;
+}
+
+    .btn--inverse:hover{
+        color: black;
+        background-color: #ffd764;
+        text-decoration: none;
+}
