@@ -14,6 +14,7 @@ import ContactPage from './clientPages/pages/ContactPage/ContactPage';
 import DashboardPage from './adminPages/pages/DashboardPage/DashboardPage';
 import ClientsPage from './adminPages/pages/ClientsPage/ClientsPage';
 import EachClientPage from './adminPages/pages/EachClientPage/EachClientPage';
+import QuotesPage from './adminPages/pages/QuotesPage/QuotesPage';
 
 import Footer from './clientPages/components/Footer/Footer';
 
@@ -64,6 +65,7 @@ function App() {
 					path="/dashboard/clients/:id"
 					element={<EachClientPage />}
 				/>
+				<Route path="/dashboard/quotes" element={<QuotesPage />} />
 			</Routes>
 		);
 	}

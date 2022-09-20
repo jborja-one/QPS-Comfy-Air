@@ -6,6 +6,13 @@ import { authReducer } from './reducers/userReducers';
 import { reviewsReducer } from './reducers/reviewsReducer';
 import { messageReducer } from './reducers/messageReducer';
 import { clientReducer, clientByIdReducer } from './reducers/clientReducer';
+import {
+	getQuotesReducer,
+	getQuoteByIdReducer,
+	createQuoteReducer,
+	updateQuoteReducer,
+	deleteQuoteReducer,
+} from './reducers/quotesReducer';
 
 export const reducers = combineReducers({
 	user: authReducer,
@@ -13,6 +20,11 @@ export const reducers = combineReducers({
 	messages: messageReducer,
 	clients: clientReducer,
 	client: clientByIdReducer,
+	quotes: getQuotesReducer,
+	quote: getQuoteByIdReducer,
+	createQuote: createQuoteReducer,
+	updateQuote: updateQuoteReducer,
+	deleteQuote: deleteQuoteReducer,
 });
 
 const initialState = {};

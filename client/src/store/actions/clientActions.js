@@ -15,7 +15,6 @@ export const getClients = () => async (dispatch) => {
 		dispatch({ type: CLIENT_REQUEST });
 
 		const { data } = await axios.get('/api/clients');
-		console.log(data.clients);
 
 		dispatch({
 			type: CLIENT_SUCCESS,
