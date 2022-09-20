@@ -1,38 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './QuoteInfo.css';
+import './InvoiceInfo.css';
 
-const QuoteInfo = (props) => {
+const InvoiceInfo = (props) => {
 	const formatDate = (date) => {
 		const dateArr = date.split('T');
 		return dateArr[0];
 	};
 
-	const quote = () => {
+	const invoice = () => {
 		try {
 			return (
 				<table className="quote-table">
 					<thead>
 						<tr>
-							<th>Quote #</th>
+							<th>Invoice #</th>
 							<th>Date Issued</th>
-							<th>Quote Status</th>
+							<th>Invoice Status</th>
 							<th></th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						{props.quote.length > 0 ? (
-							props.quote.map((quote) => {
+						{props.invoice.length > 0 ? (
+							props.invoice.map((invoice) => {
 								return (
-									<tr key={quote._id}>
-										<td>{quote.quoteNumber}</td>
-										<td>{formatDate(quote.quoteDate)}</td>
-										<td>{quote.quoteStatus}</td>
+									<tr key={invoice._id}>
+										<td>{invoice.invoiceNumber}</td>
+										<td>
+											{formatDate(invoice.invoiceDate)}
+										</td>
+										<td
+											className={
+												invoice.invoiceStatus === 'Paid'
+													? 'invoice-paid'
+													: 'invoice-unpaid'
+											}>
+											{invoice.invoiceStatus}
+										</td>
 										<td>
 											<Link
-												to={`/dashboard/quotes/${quote._id}`}>
+												to={`/dashboard/invoices/${invoice._id}`}>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													width="16"
@@ -47,7 +56,7 @@ const QuoteInfo = (props) => {
 										</td>
 										<td>
 											<Link
-												to={`/dashboard/quotes/${quote._id}/edit`}>
+												to={`/dashboard/invoices/${invoice._id}/edit`}>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													width="16"
@@ -64,7 +73,7 @@ const QuoteInfo = (props) => {
 							})
 						) : (
 							<tr>
-								<td>No Quotes</td>
+								<td>No Invoices</td>
 								<td>---</td>
 								<td>---</td>
 							</tr>
@@ -77,7 +86,7 @@ const QuoteInfo = (props) => {
 		}
 	};
 
-	return <div>{quote()}</div>;
+	return <div>{invoice()}</div>;
 };
 
-export default QuoteInfo;
+export default InvoiceInfo;

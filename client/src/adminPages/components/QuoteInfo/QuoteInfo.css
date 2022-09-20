@@ -1,0 +1,44 @@
+.quote-table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 300;
+    color: #333;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.quote-table thead{
+    background-color: #f5f5f5;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.quote-table thead th{
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.quote-table tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+
+.quote-table tbody tr:last-child{
+    border-bottom: 0;
+}
+
+.quote-table tbody tr:hover{
+    background-color: #f5f5f5;
+}
+
+.quote-table tbody tr td{
+    padding: 15px 15px;
+    text-align: center;
+}

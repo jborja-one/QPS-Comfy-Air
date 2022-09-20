@@ -1,0 +1,9 @@
+.invoice-paid{
+    color: #00b300;
+    font-weight: bold;
+}
+
+.invoice-unpaid{
+    color: #ff0000;
+    font-weight: bold;
+}

@@ -8,6 +8,8 @@ import {
 } from '../../../store/actions/clientActions';
 import DashboardMenu from '../../components/DashboardMenu/DashboardMenu';
 import QuoteInfo from '../../components/QuoteInfo/QuoteInfo';
+import InvoiceInfo from '../../components/InvoiceInfo/InvoiceInfo';
+import Button from '../../../shared/components/FormElements/Button';
 
 const EachClientPage = (props) => {
 	const dispatch = useDispatch();
@@ -18,16 +20,6 @@ const EachClientPage = (props) => {
 		dispatch(getClientById(id));
 		dispatch(clearErrors());
 	}, [dispatch, id]);
-
-	// const quoteInfo = () => {
-	// 	try {
-	// 		return client.quote.map((quote) => {
-	// 			return quote._id;
-	// 		});
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	}
-	// };
 
 	const formatPhone = (phone) => {
 		if (phone) {
@@ -50,7 +42,7 @@ const EachClientPage = (props) => {
 							Back to Clients
 						</a>
 					</div>
-					<div className="row border-bottom me-5">
+					<div className="row me-5">
 						{client ? (
 							<div className="col-md-6 ">
 								<div className="mb-30">
@@ -109,10 +101,10 @@ const EachClientPage = (props) => {
 						)}
 						<div className="col-md-6 d-flex flex-column align-items-end mt-5">
 							<div className="mb-5">
-								<a
+								<Button
 									role="button"
-									href="/dashboard/clients/new-client"
-									class="btn btn-primary sm-text bold-text ">
+									to="/dashboard/clients/create-invoice"
+									class="btn sm-text bold-text ">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										width="21"
@@ -124,13 +116,13 @@ const EachClientPage = (props) => {
 										<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
 									</svg>
 									CREATE INVOICE
-								</a>
+								</Button>
 							</div>
 							<div className="">
-								<a
+								<Button
 									role="button"
-									href="/dashboard/clients/new-client"
-									class="btn btn-primary sm-text bold-text ">
+									to="/dashboard/clients/create-quote"
+									class="btn sm-text bold-text ">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										width="21"
@@ -142,15 +134,26 @@ const EachClientPage = (props) => {
 										<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
 									</svg>
 									CREATE QUOTE
-								</a>
+								</Button>
 							</div>
 						</div>
 					</div>
+					<hr />
 					<div>
+						<h1 className="lg-text bold-text mb-4">Quotes</h1>
 						{client && client.quote ? (
 							<QuoteInfo quote={client.quote} />
 						) : (
 							'NO QUOTES'
+						)}
+					</div>
+					<hr />
+					<div>
+						<h1 className="lg-text bold-text mb-4">Invoices</h1>
+						{client && client.invoice ? (
+							<InvoiceInfo invoice={client.invoice} />
+						) : (
+							'NO INVOICES'
 						)}
 					</div>
 				</div>
