@@ -1,0 +1,5 @@
+export const REVIEW_REQUEST = 'REVIEW_REQUEST';
+export const REVIEW_SUCCESS = 'REVIEW_SUCCESS';
+export const REVIEW_FAIL = 'REVIEW_FAIL';
+
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';

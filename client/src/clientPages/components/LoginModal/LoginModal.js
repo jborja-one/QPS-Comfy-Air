@@ -37,7 +37,6 @@ const LoginModal = () => {
 			<a
 				className="nav-links bold-text"
 				onClick={openLoginModalHandler}
-				href={'#'}
 				style={{ cursor: 'pointer', textDecoration: 'none' }}>
 				Admin Login
 			</a>

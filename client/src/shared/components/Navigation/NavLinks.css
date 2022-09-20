@@ -5,27 +5,27 @@
 
 .nav-links{
     text-decoration: none;
-    color: #ffd764;
+    color: #09aeb8;
     font-size: 20px;
     font-weight: bold;
     margin: 50px;
 }
 
 .nav-links:hover{
-    color: #09aeb8;
+    color: #ffd764;
     text-decoration: underline;
 }
 
 .active{
-    color: #09aeb8;
-    text-decoration: underline;
+    color: #ffd764;
+    /* text-decoration: underline; */
     font-size: 20px;
     font-weight: bold;
 }
 
     .active:hover{
         color: #09aeb8;
-        text-decoration: underline;
+        /* text-decoration: underline; */
     }
 
 @media screen and (max-width: 768px) {

@@ -1,0 +1,31 @@
+.service-page_header-img{
+    height: 700px;
+    overflow: hidden;
+}
+
+.service-page_content{
+    margin: 88px 10px 10px 20px;
+}
+
+.service-page_content-title{
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.service-choose-us_title{
+    border-bottom: 6px solid #09aeb8;
+    padding-bottom: 20px;
+    width: 40%;
+
+}
+
+.service-choose-us_item{
+    margin-bottom: 20px;
+}
+
+.service-choose-us_right{
+    width: 50%;
+    top: 0%;
+    left: 48%;
+}

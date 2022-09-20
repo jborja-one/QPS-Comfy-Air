@@ -1,12 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Button from '../FormElements/Button';
-import LoginModal from '../../../clientPages/components/LoginModal/LoginModal';
+import { logout } from '../../../store/actions/userActions';
 
 import './NavLinks.css';
 
 const NavLinks = () => {
+	const dispatch = useDispatch();
+	const user = useSelector((state) => state.user);
+
+	const onLogout = (e) => {
+		e.preventDefault();
+		dispatch(logout());
+	};
+
 	return (
 		<ul className="nav-links__container">
 			<li>
@@ -22,7 +31,7 @@ const NavLinks = () => {
 			</li>
 
 			<li>
-				<NavLink className="nav-links" to="/services">
+				<NavLink className="nav-links" to="/services-cooling">
 					SERVICES
 				</NavLink>
 			</li>
@@ -34,7 +43,18 @@ const NavLinks = () => {
 			</li>
 
 			<li>
-				<LoginModal />
+				{user && user.isAuthenticated ? (
+					<NavLink
+						className="nav-links"
+						onClick={onLogout}
+						to="/admin-login">
+						ADMIN LOGOUT
+					</NavLink>
+				) : (
+					<NavLink className="nav-links" to="/admin-login">
+						ADMIN LOGIN
+					</NavLink>
+				)}
 			</li>
 			<li>
 				<Button className="btn" inverse>

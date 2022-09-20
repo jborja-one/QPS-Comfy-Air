@@ -5,14 +5,17 @@ import MainNav from '../../../shared/components/Navigation/MainNav';
 import InfoCards from '../../components/InfoCards/InfoCards';
 import AboutSection from '../../components/AboutSection/AboutSection';
 import Services from '../../components/ServiceCards/ServiceCards';
+import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
 
 import Home_img from '../../../images/home-img.jpeg';
 
 import './HomePage.css';
+import HeatColdBar from '../../components/HeatColdBar/HeatColdBar';
+import Reviews from '../Reviews/Reviews';
 const HomePage = () => {
 	return (
 		<div>
-			<div className="header-container">
+			<div className="">
 				<div className="header-img_container position-relative">
 					<img
 						className="img-fluid position-relative"
@@ -23,7 +26,7 @@ const HomePage = () => {
 						Installation <br></br> Services & <br></br> Repair
 					</h2>
 					<div className="header-btn_container position-absolute">
-						<Button className="btn" to="/contact-us">
+						<Button className="btn" to="/contact">
 							<p className="bold-text">Get a Free Quote</p>
 						</Button>
 					</div>
@@ -35,6 +38,9 @@ const HomePage = () => {
 			<InfoCards />
 			<AboutSection />
 			<Services />
+			<WhyChooseUs />
+			<HeatColdBar />
+			<Reviews />
 		</div>
 	);
 };

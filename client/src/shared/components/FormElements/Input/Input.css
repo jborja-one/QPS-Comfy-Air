@@ -1,11 +1,32 @@
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 8%;
+}
+
+    /* .form-container h2 */
+
+
 .form-input{
     border-radius: 15px;
     border: 2px solid #09aeb8;
-    padding: 0px 10px;
-    margin-bottom: 10px;
+    padding: 10px 10px;
+    margin: 10px 0;
+    width: 500px;
+    height: 60px;
 }
 
     .form-input:focus{
         border: 3px solid #ffd764;
         box-shadow: none;
+        outline: 0;
     }
+
+.form-control{
+    display:flex;
+    justify-content:center;
+    margin: 0 auto;
+}

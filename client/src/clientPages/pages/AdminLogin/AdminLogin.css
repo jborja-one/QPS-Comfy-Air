@@ -1,0 +1,12 @@
+.error-text{
+    text-align: center;
+    margin: 20px;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.form-container{
+    margin-top: 15%;
+    margin-bottom: 5%;
+}

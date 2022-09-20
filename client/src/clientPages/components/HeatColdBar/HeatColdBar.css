@@ -1,0 +1,11 @@
+.hot-cold_container{
+    background-image: url(../../../images/hot-and-cold-bg.jpeg);
+    background-size: cover;
+
+}
+
+    .hot-cold_content{
+        background-color: #ffd764;
+        padding: 40px;
+        width: 350px;
+    }

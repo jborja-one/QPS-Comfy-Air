@@ -36,14 +36,14 @@ const Modal = (props) => {
 	return (
 		<React.Fragment>
 			{props.show && <Backdrop onClick={props.onCancel} />}
-			{/* <CSSTransition
+			<CSSTransition
 				in={props.show}
 				mountOnEnter
 				unmountOnExit
 				timeout={200}
 				classNames="modal">
-			</CSSTransition> */}
-			<ModalOverlay {...props} />
+				<ModalOverlay {...props} />
+			</CSSTransition>
 		</React.Fragment>
 	);
 };

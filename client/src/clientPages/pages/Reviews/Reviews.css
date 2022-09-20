@@ -1,0 +1,92 @@
+.carousel {
+    height: 600px;
+    margin: 50px 0
+}
+
+    .carousel-control-prev-icon{
+        background-color: lightgray;
+    }
+
+    .carousel-control-next-icon{
+        background-color: lightgray;
+    }
+
+.reviews{
+
+    /* background-image: url(../../images/slidesbg.jpeg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.reviews-title{
+    top: 10%;
+    left: 32%;
+}
+
+.reviews_title h1{
+    font-size: 40px;
+    font-weight: bold;
+    /* color: rgb(0, 0, 0); */
+    line-height: 1.8;
+
+    }
+
+.review-card_container{
+
+    overflow-x: auto;
+    margin-top:80px;
+    white-space: nowrap;
+
+}
+
+.review-card{
+    width: 300px;
+    height: 450px;
+    display: inline-block;
+    box-shadow: 0px 0px 15px 10px lightgrey;
+    margin: 20px;
+    padding: 30px;
+    inline-size: 350px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    white-space: pre-wrap;
+}
+
+    .review-card > h1, p{
+        /* color: white; */
+    }
+
+    .review-text p{
+        padding-bottom: 20px;
+        /* color: white; */
+    }
+
+    .review-card::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+      }
+
+      .carousel{
+        width: 90%;
+    }
+
+    .carousel-item{
+        height: 500px;
+    }
+
+        .carousel-inner{
+            padding: 5% 16%;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon{
+            background-color: black !important;
+        }
+
+        .review-bar{
+            width: 50px;
+            height: 10px;
+            background-color: black;
+            border-radius: 10px;
+        }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Input.css';
 
 const Input = (props) => {
 	const [isValid] = useState(true);
@@ -13,7 +14,7 @@ const Input = (props) => {
 				onChange={props.onChange}
 				onBlur={props.onBlur}
 				value={props.value}
-				// errorText={props.errorText}
+				error-text={props.errorText}
 			/>
 		) : (
 			<textarea
@@ -23,7 +24,7 @@ const Input = (props) => {
 				onChange={props.onChange}
 				onBlur={props.onBlur}
 				value={props.value}
-				// errorText={props.errorText}
+				error-text={props.errorText}
 			/>
 		);
 

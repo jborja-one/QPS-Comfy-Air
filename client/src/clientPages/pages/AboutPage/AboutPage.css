@@ -1,0 +1,132 @@
+.about-page-header{
+    height: 700px;
+    overflow: hidden;
+}
+
+    .about-us-header_title{
+            top: 54%;
+            left: 10%;
+            font-size: 90px;
+            line-height: 1.2;
+            color: white;
+            text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
+    }
+
+.about-page_container{
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.about-page_richar-photo{
+    width: 500px;
+}
+
+.about-page_img_content{
+    background-color: #ffd764;
+    width: 225px;
+    height: 215px;
+    top: 73%;
+    left: 30%;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+    .about-page_img-years{
+        font-size: 65px;
+        /* line-height: 0; */
+    }
+
+    .fa-about{
+        font-size: 40px !important;
+    }
+
+.about-page_content-list{
+    margin-left: 60px;
+}
+
+.about-page_content-discount{
+    border: 3px dotted #09aeb8;
+    padding: 50px;
+    margin-top: 100px;
+}
+
+    .discount-title{
+        font-size: 50px;
+        color: #09aeb8;
+    }
+
+@media screen and (max-width: 480px){
+    .about-page-header {
+        height: auto;
+    }
+
+        .about-us-header_title{
+            top: 33%;
+            font-size:45px
+        }
+
+    .about-page_container{
+        margin-top: 50px !important;
+        margin-bottom: 50px !important;
+    }
+
+    .about-page_content-left{
+        flex-direction: column !important;
+    }
+
+        .about-page_richar-photo{
+            width: 100%;
+            margin-bottom: 80px;
+        }
+
+        .about-page_img_content{
+            top: 34%;
+            left: 53%;
+        }
+
+    .about-page_content-list{
+        margin-left: 0 !important;
+    }
+
+        .about-page_content-discount{
+            margin-top: 50px !important;
+        }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+    .about-page-header {
+        height: auto;
+    }
+
+        .about-us-header_title{
+            top: 33%;
+            font-size:70px
+        }
+
+    .about-page_container{
+        margin-top: 50px !important;
+        margin-bottom: 50px !important;
+    }
+
+    .about-page_content-left{
+        flex-direction: column !important;
+    }
+
+        .about-page_richar-photo{
+            width: 100%;
+            margin-bottom: 80px;
+        }
+
+        .about-page_img_content{
+            top:46%;
+            left: 72%;
+        }
+
+    .about-page_content-list{
+        margin-left: 0 !important;
+    }
+
+        .about-page_content-discount{
+            margin-top: 50px !important;
+        }
+}
