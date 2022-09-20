@@ -129,8 +129,10 @@ const updateClient = async (req, res) => {
 //@desc    Get client by ID
 //@route   GET /api/clients/:id
 //@access  Private
-const getClientById = async (req, res) => {
-	const client = await Client.findById(req.params.id).select('-password');
+const getClientById = async (req, res, next) => {
+	const client = await Client.findById(req.params.id)
+		.populate('quote')
+		.populate('invoice');
 
 	if (client) {
 		res.json(client);
