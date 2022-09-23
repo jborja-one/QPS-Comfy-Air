@@ -66,6 +66,7 @@ const getInvoicesByClientID = asyncHandler(async (req, res) => {
 // @access  Public
 const getInvoiceByID = asyncHandler(async (req, res, next) => {
 	const invoice = await Invoice.findById(req.params.id).populate('client');
+
 	if (invoice) {
 		res.json({ invoice });
 	} else {

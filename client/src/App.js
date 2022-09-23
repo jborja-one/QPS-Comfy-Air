@@ -15,6 +15,9 @@ import DashboardPage from './adminPages/pages/DashboardPage/DashboardPage';
 import ClientsPage from './adminPages/pages/ClientsPage/ClientsPage';
 import EachClientPage from './adminPages/pages/EachClientPage/EachClientPage';
 import QuotesPage from './adminPages/pages/QuotesPage/QuotesPage';
+import InvoicesPage from './adminPages/pages/InvoicesPage/InvoicesPage';
+import SingleQuotePage from './adminPages/pages/SingleQuotePage/SingleQuotePage';
+import SingleInvoicePage from './adminPages/pages/SingleInvoicePage/SingleInvoicePage';
 
 import Footer from './clientPages/components/Footer/Footer';
 
@@ -66,6 +69,15 @@ function App() {
 					element={<EachClientPage />}
 				/>
 				<Route path="/dashboard/quotes" element={<QuotesPage />} />
+				<Route
+					path="/dashboard/quotes/:id"
+					element={<SingleQuotePage />}
+				/>
+				<Route path="/dashboard/invoices" element={<InvoicesPage />} />
+				<Route
+					path="/dashboard/invoices/:id"
+					element={<SingleInvoicePage />}
+				/>
 			</Routes>
 		);
 	}
@@ -73,7 +85,7 @@ function App() {
 	return (
 		<>
 			<BrowserRouter>{routes}</BrowserRouter>
-			<Footer />
+			{/* <Footer /> */}
 			<ToastContainer />
 		</>
 	);

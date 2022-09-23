@@ -13,6 +13,13 @@ import {
 	updateQuoteReducer,
 	deleteQuoteReducer,
 } from './reducers/quotesReducer';
+import {
+	getInvoicesReducer,
+	getInvoiceByIdReducer,
+	createInvoiceReducer,
+	updateInvoiceReducer,
+	deleteInvoiceReducer,
+} from './reducers/invoicesReducer';
 
 export const reducers = combineReducers({
 	user: authReducer,
@@ -25,6 +32,11 @@ export const reducers = combineReducers({
 	createQuote: createQuoteReducer,
 	updateQuote: updateQuoteReducer,
 	deleteQuote: deleteQuoteReducer,
+	invoices: getInvoicesReducer,
+	invoice: getInvoiceByIdReducer,
+	createInvoice: createInvoiceReducer,
+	updateInvoice: updateInvoiceReducer,
+	deleteInvoice: deleteInvoiceReducer,
 });
 
 const initialState = {};

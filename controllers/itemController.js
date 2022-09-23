@@ -8,9 +8,16 @@ const mongoose = require('mongoose');
 // @route   POST /api/items
 // @access  Private
 const createItem = asyncHandler(async (req, res, next) => {
-	const { itemDescription, itemQuantity, itemPrice, itemTotal, quote } =
-		req.body;
+	const {
+		itemName,
+		itemDescription,
+		itemQuantity,
+		itemPrice,
+		itemTotal,
+		quote,
+	} = req.body;
 	const item = new Item({
+		itemName,
 		itemDescription,
 		itemQuantity,
 		itemPrice,
@@ -70,12 +77,19 @@ const getItemById = asyncHandler(async (req, res, next) => {
 // @route   PUT /api/items/:id
 // @access  Private
 const updateItem = asyncHandler(async (req, res) => {
-	const { itemNumber, itemDescription, itemQuantity, itemPrice, itemTotal } =
-		req.body;
+	const {
+		itemName,
+		itemNumber,
+		itemDescription,
+		itemQuantity,
+		itemPrice,
+		itemTotal,
+	} = req.body;
 	const item = await Item.findById(req.params.id);
 
 	if (item) {
 		item.itemNumber = itemNumber || item.itemNumber;
+		item.itemName = itemName || item.itemName;
 		item.itemDescription = itemDescription || item.itemDescription;
 		item.itemQuantity = itemQuantity || item.itemQuantity;
 		item.itemPrice = itemPrice || item.itemPrice;

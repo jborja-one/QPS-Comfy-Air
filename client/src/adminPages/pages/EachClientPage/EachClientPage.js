@@ -29,6 +29,9 @@ const EachClientPage = (props) => {
 			return phoneArr.join('');
 		}
 	};
+	if (client) {
+		console.log(client);
+	}
 
 	return (
 		<div className="row">
@@ -43,7 +46,7 @@ const EachClientPage = (props) => {
 						</a>
 					</div>
 					<div className="row me-5">
-						{client ? (
+						{client && client ? (
 							<div className="col-md-6 ">
 								<div className="mb-30">
 									<div className="mb-5">

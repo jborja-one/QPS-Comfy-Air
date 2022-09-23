@@ -33,7 +33,10 @@ const InvoiceInfo = (props) => {
 										</td>
 										<td
 											className={
-												invoice.invoiceStatus === 'Paid'
+												invoice.invoiceStatus ===
+													'Paid' ||
+												invoice.invoiceStatus ===
+													'approved'
 													? 'invoice-paid'
 													: 'invoice-unpaid'
 											}>

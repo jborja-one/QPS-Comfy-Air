@@ -29,7 +29,15 @@ const QuoteInfo = (props) => {
 									<tr key={quote._id}>
 										<td>{quote.quoteNumber}</td>
 										<td>{formatDate(quote.quoteDate)}</td>
-										<td>{quote.quoteStatus}</td>
+										<td
+											className={
+												quote.quoteStatus === 'Paid' ||
+												quote.quoteStatus === 'Approved'
+													? 'invoice-paid'
+													: 'invoice-unpaid'
+											}>
+											{quote.quoteStatus}
+										</td>
 										<td>
 											<Link
 												to={`/dashboard/quotes/${quote._id}`}>

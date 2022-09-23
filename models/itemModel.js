@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const itemSchema = mongoose.Schema(
 	{
 		itemNumber: { type: String },
+		itemName: { type: String },
 		itemDescription: { type: String },
-		itemPrice: { type: Number },
 		itemQuantity: { type: Number },
+		itemPrice: { type: Number },
 		itemTotal: { type: Number },
 		quote: { type: mongoose.Schema.Types.ObjectId, ref: 'Quote' },
 	},
