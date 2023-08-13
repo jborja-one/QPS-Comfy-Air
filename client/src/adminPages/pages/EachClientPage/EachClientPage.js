@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 
 import {
-	getClientById,
+	getProjectById,
 	clearErrors,
-} from '../../../store/actions/clientActions';
+} from '../../../store/actions/projectActions';
+import { getClientById } from '../../../store/actions/clientActions';
+import ProjectInfo from '../../components/ProjectInfo/ProjectInfo';
 import DashboardMenu from '../../components/DashboardMenu/DashboardMenu';
-import QuoteInfo from '../../components/QuoteInfo/QuoteInfo';
-import InvoiceInfo from '../../components/InvoiceInfo/InvoiceInfo';
 import Button from '../../../shared/components/FormElements/Button';
 
 const EachClientPage = (props) => {
@@ -107,58 +107,32 @@ const EachClientPage = (props) => {
 								<Button
 									role="button"
 									to="/dashboard/clients/create-invoice"
-									class="btn sm-text bold-text ">
+									className="btn sm-text bold-text ">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										width="21"
 										height="21"
 										fill="currentColor"
-										class="bi bi-plus-square me-2 mb-1"
+										className="bi bi-plus-square me-2 mb-1"
 										viewBox="0 0 16 16">
 										<path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
 										<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
 									</svg>
-									CREATE INVOICE
-								</Button>
-							</div>
-							<div className="">
-								<Button
-									role="button"
-									to="/dashboard/clients/create-quote"
-									class="btn sm-text bold-text ">
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										width="21"
-										height="21"
-										fill="currentColor"
-										class="bi bi-plus-square me-2 mb-1"
-										viewBox="0 0 16 16">
-										<path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-										<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-									</svg>
-									CREATE QUOTE
+									CREATE PROJECT
 								</Button>
 							</div>
 						</div>
 					</div>
 					<hr />
 					<div>
-						<h1 className="lg-text bold-text mb-4">Quotes</h1>
-						{client && client.quote ? (
-							<QuoteInfo quote={client.quote} />
+						<h1 className="lg-text bold-text mb-4">PROJECTS</h1>
+						{client && client.project ? (
+							<ProjectInfo projects={client.project} />
 						) : (
-							'NO QUOTES'
+							'NO PROJECTS'
 						)}
 					</div>
 					<hr />
-					<div>
-						<h1 className="lg-text bold-text mb-4">Invoices</h1>
-						{client && client.invoice ? (
-							<InvoiceInfo invoice={client.invoice} />
-						) : (
-							'NO INVOICES'
-						)}
-					</div>
 				</div>
 			</div>
 		</div>

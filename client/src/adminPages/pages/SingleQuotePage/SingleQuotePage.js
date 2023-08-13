@@ -1,22 +1,25 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import Button from '../../../shared/components/FormElements/Button';
+// import Button from '../../../shared/components/FormElements/Button';
 
-import { getQuoteById, resetQuote } from '../../../store/actions/quoteActions';
+import {
+	getProjectById,
+	clearErrors,
+} from '../../../store/actions/projectActions';
 import DashboardMenu from '../../components/DashboardMenu/DashboardMenu';
 
 const SingleQuotePage = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams();
-	const { quote, error, loading } = useSelector((state) => state.quote);
+	const { project, error, loading } = useSelector((state) => state.project);
 
 	useEffect(() => {
-		dispatch(getQuoteById(id));
+		dispatch(getProjectById(id));
 		return () => {
-			dispatch(resetQuote());
+			dispatch(clearErrors());
 		};
-	}, [dispatch]);
+	}, [dispatch, id]);
 
 	const formatDate = (date) => {
 		const dateArr = date.split('T');
@@ -43,22 +46,22 @@ const SingleQuotePage = () => {
 							Back to Quotes
 						</Link>
 					</div>
-					{quote && quote.client && (
+					{project && project.client && (
 						<div className="document-container">
 							<div className="document-header d-flex justify-content-between align-items-center">
 								<h1 className="lg-text bold-text ">
-									{quote.client.clientName}
+									{project.client.clientName}
 								</h1>
 								<h3 className="lg-text bold-text me-5">
 									Status:{' '}
 									<spam
 										className={
-											quote.quoteStatus === 'Paid' ||
-											quote.quoteStatus === 'Approved'
+											project.projectStatus === 'Paid' ||
+											project.projectStatus === 'Approved'
 												? 'invoice-paid'
 												: 'invoice-unpaid'
 										}>
-										{quote.quoteStatus}
+										{project.projectStatus}
 									</spam>
 								</h3>
 							</div>
@@ -70,7 +73,7 @@ const SingleQuotePage = () => {
 											Email:
 										</h3>
 										<p className="sm-text light-text">
-											{quote.client.clientEmail}
+											{project.client.clientEmail}
 										</p>
 									</div>
 									<div className="d-flex justify-content-between align-items-center mt-3">
@@ -79,7 +82,7 @@ const SingleQuotePage = () => {
 										</h3>
 										<p className="sm-text light-text">
 											{formatPhone(
-												quote.client.clientPhone
+												project.client.clientPhone
 											)}
 										</p>
 									</div>
@@ -88,7 +91,7 @@ const SingleQuotePage = () => {
 											Address:
 										</h3>
 										<p className="sm-text light-text">
-											{quote.client.clientStreet}
+											{project.client.clientStreet}
 										</p>
 									</div>
 									<div className="d-flex justify-content-between align-items-center mt-3">
@@ -96,8 +99,8 @@ const SingleQuotePage = () => {
 											City & State:
 										</h3>
 										<p className="sm-text light-text">
-											{quote.client.clientCity},{' '}
-											{quote.client.clientState}
+											{project.client.clientCity},{' '}
+											{project.client.clientState}
 										</p>
 									</div>
 									<div className="d-flex justify-content-between align-items-center mt-3">
@@ -105,7 +108,7 @@ const SingleQuotePage = () => {
 											Zip Code:
 										</h3>
 										<p className="sm-text light-text">
-											{quote.client.clientZip}
+											{project.client.clientZip}
 										</p>
 									</div>
 									<div className="d-flex justify-content-between align-items-center mt-3">
@@ -115,9 +118,9 @@ const SingleQuotePage = () => {
 											</h3>
 										</div>
 										<div className="">
-											{quote.client.clientNotes.length >
+											{project.client.clientNotes.length >
 											0 ? (
-												quote.client.clientNotes.map(
+												project.client.clientNotes.map(
 													(note) => (
 														<li className="sm-text light-text ">
 															{note}
@@ -136,10 +139,10 @@ const SingleQuotePage = () => {
 								<div className="col-md-5 ">
 									<div className="d-flex justify-content-between align-items-center mt-3">
 										<h3 className="md-text bold-text">
-											Quote #:
+											Project #:
 										</h3>
 										<p className="sm-text light-text">
-											{quote.quoteNumber}
+											{project.projectNumber}
 										</p>
 									</div>
 									<div className="d-flex justify-content-between align-items-center mt-3">
@@ -147,7 +150,7 @@ const SingleQuotePage = () => {
 											Date Issued:
 										</h3>
 										<p className="sm-text light-text">
-											{formatDate(quote.quoteDate)}
+											{formatDate(project.projectDate)}
 										</p>
 									</div>
 									<div className="d-flex justify-content-between align-items-center mt-3">
@@ -155,26 +158,26 @@ const SingleQuotePage = () => {
 											Exp. Date:
 										</h3>
 										<p className="sm-text light-text">
-											{formatDate(quote.quoteDate)}
+											{formatDate(project.projectDate)}
 										</p>
 									</div>
-									<div className="d-flex justify-content-between align-items-center mt-3">
+									{/* <div className="d-flex justify-content-between align-items-center mt-3">
 										<h3 className="md-text bold-text">
-											Quote Total:
+											project Total:
 										</h3>
 										<p className="sm-text light-text">
-											${quote.quoteTotal}.00
+											${project.projectTotal}.00
 										</p>
-									</div>
+									</div> */}
 									<div className="d-flex justify-content-between align-items-center mt-3">
 										<div className="">
 											<h3 className="md-text bold-text">
-												Quote Notes:
+												Project Notes:
 											</h3>
 										</div>
 										<div className="">
 											<p className="sm-text light-text">
-												{quote.quoteNotes}
+												{project.projectNotes}
 											</p>
 										</div>
 									</div>
@@ -205,49 +208,57 @@ const SingleQuotePage = () => {
 									<thead>
 										<tr>
 											<th>Item #</th>
-											<th>Item Name</th>
+
 											<th>Item Description</th>
-											<th>Item Quantity</th>
+
 											<th>Item Price</th>
-											<th>Item Total</th>
+
 											<th></th>
 										</tr>
 									</thead>
 									<tbody>
-										{quote.items.length > 0 ? (
-											quote.items.map((item, i) => (
-												<tr key={i}>
-													<td>{item.itemNumber}</td>
-													<td>{item.itemName}</td>
-													<td>
-														{item.itemDescription}
-													</td>
-													<td>{item.itemQuantity}</td>
-													<td>{item.itemPrice}</td>
-													<td>{item.itemTotal}</td>
-													<td>
-														<a className="not-btn">
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																width="20"
-																height="20"
-																fill="red"
-																class="bi bi-trash mb-1"
-																viewBox="0 0 16 16">
-																<path d="M2.5 14a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5V14z" />
-																<path
-																	fill-rule="evenodd"
-																	d="M4.5 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
-																/>
-																<path
-																	fill-rule="evenodd"
-																	d="M1.5 1.5A1.5 1.5 0 0 1 3 0h10a1.5 1.5 0 0 1 1.5 1.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0-.5.5v1a.5.5 0 0 1-1 0v-1z"
-																/>
-															</svg>
-														</a>
-													</td>
-												</tr>
-											))
+										{project.projectItems.length > 0 ? (
+											project.projectItems.map(
+												(item, i) => (
+													<tr key={i}>
+														<td>
+															{item.itemNumber}
+														</td>
+
+														<td>
+															{
+																item.itemDescription
+															}
+														</td>
+
+														<td>
+															{item.itemPrice}
+														</td>
+
+														<td>
+															<a className="not-btn">
+																<svg
+																	xmlns="http://www.w3.org/2000/svg"
+																	width="20"
+																	height="20"
+																	fill="red"
+																	class="bi bi-trash mb-1"
+																	viewBox="0 0 16 16">
+																	<path d="M2.5 14a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5V14z" />
+																	<path
+																		fill-rule="evenodd"
+																		d="M4.5 1a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+																	/>
+																	<path
+																		fill-rule="evenodd"
+																		d="M1.5 1.5A1.5 1.5 0 0 1 3 0h10a1.5 1.5 0 0 1 1.5 1.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 0-.5-.5H3a.5.5 0 0 0-.5.5v1a.5.5 0 0 1-1 0v-1z"
+																	/>
+																</svg>
+															</a>
+														</td>
+													</tr>
+												)
+											)
 										) : (
 											<tr>
 												<td>No Items Added</td>

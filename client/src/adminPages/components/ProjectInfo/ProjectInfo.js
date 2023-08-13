@@ -1,46 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './QuoteInfo.css';
+import './ProjectInfo.css';
 
-const QuoteInfo = (props) => {
+const ProjectInfo = (props) => {
 	const formatDate = (date) => {
 		const dateArr = date.split('T');
 		return dateArr[0];
 	};
 
-	const quote = () => {
+	const project = () => {
 		try {
 			return (
 				<table className="quote-table">
 					<thead>
 						<tr>
-							<th>Quote #</th>
+							<th>#</th>
 							<th>Date Issued</th>
-							<th>Quote Status</th>
+							<th>Status</th>
+							<th>Type</th>
 							<th></th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
-						{props.quote.length > 0 ? (
-							props.quote.map((quote) => {
+						{props.projects.length > 0 ? (
+							props.projects.map((project) => {
 								return (
-									<tr key={quote._id}>
-										<td>{quote.quoteNumber}</td>
-										<td>{formatDate(quote.quoteDate)}</td>
+									<tr key={project._id}>
+										<td>{project.projectNumber}</td>
+										<td>
+											{formatDate(project.projectDate)}
+										</td>
 										<td
 											className={
-												quote.quoteStatus === 'Paid' ||
-												quote.quoteStatus === 'Approved'
+												project.projectStatus ===
+													'Paid' ||
+												project.projectStatus ===
+													'Approved'
 													? 'invoice-paid'
 													: 'invoice-unpaid'
 											}>
-											{quote.quoteStatus}
+											{project.projectStatus}
 										</td>
+										<td>{project.projectType}</td>
 										<td>
 											<Link
-												to={`/dashboard/quotes/${quote._id}`}>
+												to={`/dashboard/quotes/${project._id}`}>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													width="16"
@@ -55,7 +61,7 @@ const QuoteInfo = (props) => {
 										</td>
 										<td>
 											<Link
-												to={`/dashboard/quotes/${quote._id}/edit`}>
+												to={`/dashboard/quotes/${project._id}/edit`}>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
 													width="16"
@@ -85,7 +91,7 @@ const QuoteInfo = (props) => {
 		}
 	};
 
-	return <div>{quote()}</div>;
+	return <div>{project()}</div>;
 };
 
-export default QuoteInfo;
+export default ProjectInfo;

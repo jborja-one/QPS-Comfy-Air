@@ -21,7 +21,7 @@ const createProject = async (req, res, next) => {
 	const date = projectDate.split('T');
 	formattedDate = date[0];
 
-	const project = await Project.create({
+	const project = await new Project({
 		projectNumber,
 		projectDate,
 		projectType,
@@ -40,17 +40,17 @@ const createProject = async (req, res, next) => {
 		return next(error);
 	}
 
-	// try {
-	// 	const session = await mongoose.startSession();
-	// 	session.startTransaction();
-	// 	await project.save({ session: session });
-	// 	clientID.project.push(project);
-	// 	await clientID.save({ session: session });
-	// 	await session.commitTransaction();
-	// } catch (err) {
-	// 	const error = new HttpError('Creating project failed', 500);
-	// 	return next(error);
-	// }
+	try {
+		const session = await mongoose.startSession();
+		session.startTransaction();
+		await project.save({ session: session });
+		clientID.project.push(project);
+		await clientID.save({ session: session });
+		await session.commitTransaction();
+	} catch (err) {
+		const error = new HttpError('Creating project failed', 500);
+		return next(error);
+	}
 
 	res.status(201).json({ project });
 };

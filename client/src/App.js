@@ -68,16 +68,16 @@ function App() {
 					path="/dashboard/clients/:id"
 					element={<EachClientPage />}
 				/>
-				<Route path="/dashboard/quotes" element={<QuotesPage />} />
+				{/* <Route path="/dashboard/quotes" element={<QuotesPage />} /> */}
 				<Route
 					path="/dashboard/quotes/:id"
 					element={<SingleQuotePage />}
 				/>
-				<Route path="/dashboard/invoices" element={<InvoicesPage />} />
+				{/* <Route path="/dashboard/invoices" element={<InvoicesPage />} />
 				<Route
 					path="/dashboard/invoices/:id"
 					element={<SingleInvoicePage />}
-				/>
+				/> */}
 			</Routes>
 		);
 	}

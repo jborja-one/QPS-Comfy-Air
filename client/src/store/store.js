@@ -14,12 +14,12 @@ import {
 	deleteQuoteReducer,
 } from './reducers/quotesReducer';
 import {
-	getInvoicesReducer,
-	getInvoiceByIdReducer,
-	createInvoiceReducer,
-	updateInvoiceReducer,
-	deleteInvoiceReducer,
-} from './reducers/invoicesReducer';
+	getProjectsReducer,
+	getProjectByIdReducer,
+	createProjectReducer,
+	updateProjectReducer,
+	deleteProjectReducer,
+} from './reducers/projectReducer';
 
 export const reducers = combineReducers({
 	user: authReducer,
@@ -32,11 +32,11 @@ export const reducers = combineReducers({
 	createQuote: createQuoteReducer,
 	updateQuote: updateQuoteReducer,
 	deleteQuote: deleteQuoteReducer,
-	invoices: getInvoicesReducer,
-	invoice: getInvoiceByIdReducer,
-	createInvoice: createInvoiceReducer,
-	updateInvoice: updateInvoiceReducer,
-	deleteInvoice: deleteInvoiceReducer,
+	projects: getProjectsReducer,
+	project: getProjectByIdReducer,
+	createProject: createProjectReducer,
+	updateProject: updateProjectReducer,
+	deleteProject: deleteProjectReducer,
 });
 
 const initialState = {};

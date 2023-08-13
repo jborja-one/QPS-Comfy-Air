@@ -10,7 +10,13 @@ const clientSchema = mongoose.Schema(
 		clientState: { type: String, required: true },
 		clientZip: { type: String, required: true },
 		clientNotes: [{ type: String }],
-		project: [{ type: mongoose.Types.ObjectId, ref: 'Project' }],
+		project: [
+			{
+				type: mongoose.Types.ObjectId,
+				ref: 'Project',
+				required: true,
+			},
+		],
 		// quote: [{ type: mongoose.Types.ObjectId, ref: 'Quote' }],
 		// invoice: [{ type: mongoose.Types.ObjectId, ref: 'Invoice' }],
 	},
