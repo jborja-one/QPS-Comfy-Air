@@ -1,46 +1,10 @@
 const Client = require('../models/clientModel');
 const HttpError = require('../utils/http-error');
 
-// @desc    Get all clients
-// @route   GET /api/clients
-// @access  Private
-const getClients = async (req, res) => {
-	const clients = await Client.find({}).populate('quote');
-	res.json({ clients });
-};
-
-// @desc    Delete client
-// @route   DELETE /api/clients/:id
-// @access  Private
-const deleteClient = async (req, res, next) => {
-	const clientId = req.params.id;
-
-	if (!clientId) {
-		res.status(404);
-		const error = new HttpError('Client not found', 404);
-		return next(error);
-	}
-
-	const client = await Client.findById(clientId).populate('quote');
-	console.log(client.quote.length);
-
-	if (!client.quote.length === 0 || !client.invoice.length === 0) {
-		await client.remove();
-		res.json({ message: 'Client removed' });
-	} else {
-		res.status(404);
-		const error = new HttpError(
-			'Client has quotes or invoices and cannot be deleted.',
-			404
-		);
-		return next(error);
-	}
-};
-
 // @desc    Create a client
 // @route   POST /api/clients
 // @access  Private
-const createClient = async (req, res) => {
+const createClient = async (req, res, next) => {
 	const {
 		clientName,
 		clientEmail,
@@ -52,9 +16,10 @@ const createClient = async (req, res) => {
 		clientNotes,
 	} = req.body;
 
-	const clientExists = await Client.findOne({ clientEmail });
+	const existingPhone = await Client.findOne({ clientPhone });
+	const existingEmail = await Client.findOne({ clientEmail });
 
-	if (clientExists) {
+	if (existingEmail || existingPhone) {
 		res.status(400);
 		const error = new HttpError('Client already exists', 400);
 		return next(error);
@@ -76,6 +41,57 @@ const createClient = async (req, res) => {
 	} else {
 		res.status(400);
 		const error = new HttpError('Invalid client data', 400);
+		return next(error);
+	}
+};
+
+//@desc    Get client by ID
+//@route   GET /api/clients/:id
+//@access  Private
+const getClientById = async (req, res, next) => {
+	const client = await Client.findById(req.params.id).populate('project');
+
+	if (client) {
+		res.json(client);
+	} else {
+		res.status(404);
+		const error = new HttpError('Client not found', 404);
+		return next(error);
+	}
+};
+
+// @desc    Get all clients
+// @route   GET /api/clients
+// @access  Private
+const getClients = async (req, res) => {
+	const clients = await Client.find({}).populate('project');
+	res.json({ clients });
+};
+
+// @desc    Delete client
+// @route   DELETE /api/clients/:id
+// @access  Private
+const deleteClient = async (req, res, next) => {
+	const clientId = req.params.id;
+
+	if (!clientId) {
+		res.status(404);
+		const error = new HttpError('Client not found', 404);
+		return next(error);
+	}
+
+	const client = await Client.findById(clientId).populate('project');
+	console.log(client.project.length);
+
+	if (!client.project.length === 0) {
+		await client.remove();
+		res.json({ message: 'Client removed' });
+	} else {
+		res.status(404);
+		const error = new HttpError(
+			'Client has quotes or invoices and cannot be deleted.',
+			404
+		);
 		return next(error);
 	}
 };
@@ -119,23 +135,6 @@ const updateClient = async (req, res) => {
 			clientZip: updatedClient.clientZip,
 			clientNotes: updatedClient.clientNotes,
 		});
-	} else {
-		res.status(404);
-		const error = new HttpError('Client not found', 404);
-		return next(error);
-	}
-};
-
-//@desc    Get client by ID
-//@route   GET /api/clients/:id
-//@access  Private
-const getClientById = async (req, res, next) => {
-	const client = await Client.findById(req.params.id)
-		.populate('quote')
-		.populate('invoice');
-
-	if (client) {
-		res.json(client);
 	} else {
 		res.status(404);
 		const error = new HttpError('Client not found', 404);

@@ -10,9 +10,7 @@ const userRoutes = require('./routes/userRoutes');
 const clientRoutes = require('./routes/clientRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
 const messageRoutes = require('./routes/messagesRoutes');
-const quoteRoutes = require('./routes/quoteRoutes');
-const itemRoutes = require('./routes/itemRoutes');
-const invoiceRoutes = require('./routes/invoiceRoutes');
+const projectRoutes = require('./routes/projectRoutes');
 
 //Handle uncaught exceptions
 process.on('uncaughtException', (err) => {
@@ -33,9 +31,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/messages', messageRoutes);
-app.use('/api/quotes', quoteRoutes);
-app.use('/api/items', itemRoutes);
-app.use('/api/invoices', invoiceRoutes);
+app.use('/api/projects', projectRoutes);
 
 // Middleware to handle errors
 app.use(errorMiddleware);

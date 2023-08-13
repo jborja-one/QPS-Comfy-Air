@@ -1,4 +1,4 @@
-//Connection file to mongo db
+// Connection file to mongo db
 const mongoose = require('mongoose');
 const colors = require('colors');
 const dotenv = require('dotenv');

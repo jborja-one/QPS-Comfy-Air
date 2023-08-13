@@ -40,7 +40,7 @@ const HomePage = () => {
 			<Services />
 			<WhyChooseUs />
 			<HeatColdBar />
-			<Reviews />
+			{/* <Reviews /> */}
 		</div>
 	);
 };
