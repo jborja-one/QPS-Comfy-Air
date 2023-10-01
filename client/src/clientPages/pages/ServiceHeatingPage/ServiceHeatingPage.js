@@ -6,6 +6,7 @@ import ServiceHeating from '../../../images/services-heating.jpeg';
 import ChooseUs from '../../../images/why-choose-us.jpeg';
 import MainNav from '../../../shared/components/Navigation/MainNav';
 import Reviews from '../Reviews/Reviews';
+import Footer from '../../components/Footer/Footer';
 
 function ServiceHeatingPage() {
 	return (
@@ -162,7 +163,9 @@ function ServiceHeatingPage() {
 			</div>
 			<div>
 				<div className="d-flex justify-content-center my-5">
-					<a className="lg-btn bold-text">Get a Free Quote</a>
+					<a className="lg-btn bold-text" href="/contact">
+						Get a Free Quote
+					</a>
 				</div>
 			</div>
 			{/* <div>
@@ -170,6 +173,7 @@ function ServiceHeatingPage() {
 			</div> */}
 			<InfoCards />
 			<Reviews />
+			<Footer />
 		</>
 	);
 }

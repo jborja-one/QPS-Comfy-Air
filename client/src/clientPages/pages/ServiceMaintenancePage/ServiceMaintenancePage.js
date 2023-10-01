@@ -6,6 +6,7 @@ import InfoCards from '../../components/InfoCards/InfoCards';
 import Reviews from '../Reviews/Reviews';
 import ServiceMaintenance from '../../../images/services-maintenance.jpeg';
 import ChooseUs from '../../../images/why-choose-us.jpeg';
+import Footer from '../../components/Footer/Footer';
 
 function ServiceMaintenancePage() {
 	return (
@@ -162,7 +163,9 @@ function ServiceMaintenancePage() {
 			</div>
 			<div>
 				<div className="d-flex justify-content-center my-5">
-					<a className="lg-btn bold-text">Get a Free Quote</a>
+					<a className="lg-btn bold-text" href="/contact">
+						Get a Free Quote
+					</a>
 				</div>
 			</div>
 			{/* <div>
@@ -170,6 +173,7 @@ function ServiceMaintenancePage() {
 			</div> */}
 			<InfoCards />
 			<Reviews />
+			<Footer />
 		</>
 	);
 }

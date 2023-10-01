@@ -26,10 +26,13 @@ function ServiceCards() {
 								Air Conditioning
 							</h3>
 							<p className="sm-text light-text service-card_text my-4 py-3 px-3">
-								Lorem ipsum dolor sed, consectetur adipiscing
-								elit, sed do eiusmod labore dolore magna aliqua
+								Full diagnostic and planning for the best
+								service and equipment available for your home or
+								business.
 							</p>
-							<a className="service-card_btn bold-text" href="/">
+							<a
+								className="service-card_btn bold-text"
+								href="/services-cooling/#services-cooling">
 								Learn More
 							</a>
 						</div>
@@ -45,10 +48,13 @@ function ServiceCards() {
 								Heating
 							</h3>
 							<p className="sm-text light-text service-card_text my-4 py-3 px-3">
-								Lorem ipsum dolor sed, consectetur adipiscing
-								elit, sed do eiusmod labore dolore magna aliqua
+								Full diagnostic and planning for the best
+								service and equipment available for your home or
+								business.
 							</p>
-							<a className="service-card_btn bold-text" href="/">
+							<a
+								className="service-card_btn bold-text"
+								href="/services-heating/#heating">
 								Learn More
 							</a>
 						</div>
@@ -64,10 +70,13 @@ function ServiceCards() {
 								Repairs
 							</h3>
 							<p className="sm-text light-text service-card_text my-4 py-3 px-3">
-								Lorem ipsum dolor sed, consectetur adipiscing
-								elit, sed do eiusmod labore dolore magna aliqua
+								A proper diagnostic is key for a professional
+								repair. Misdiagnosis are often the cause for
+								equipment failures.
 							</p>
-							<a className="service-card_btn bold-text" href="/">
+							<a
+								className="service-card_btn bold-text"
+								href="/services-maintenance/#maintenance">
 								Learn More
 							</a>
 						</div>
@@ -77,7 +86,7 @@ function ServiceCards() {
 					<h2 className="lg-text reg-text text-center fs-1">
 						No Overtime Charges, 7 Days a Week
 					</h2>
-					<a className="banner-btn bold-text" href="/">
+					<a className="banner-btn bold-text" href="/contact">
 						Get a Free Quote
 					</a>
 				</div>

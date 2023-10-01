@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Button from '../FormElements/Button';
+
 import { logout } from '../../../store/actions/userActions';
 
 import './NavLinks.css';
@@ -31,7 +32,9 @@ const NavLinks = () => {
 			</li>
 
 			<li>
-				<NavLink className="nav-links" to="/services-cooling">
+				<NavLink
+					className="nav-links"
+					to="/services-cooling/#services-cooling">
 					SERVICES
 				</NavLink>
 			</li>

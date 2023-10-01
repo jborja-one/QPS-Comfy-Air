@@ -16,17 +16,19 @@ const AboutSection = () => {
 			/>
 			<div className="home-about_content col-md-4">
 				<h2 className="reg-text lg-text">Welcome to ComfyAir</h2>
-				<p className="md-text light-text my-4">
+				<h1 className="md-text light-text my-4">
 					Heating and air conditioning installation and repair company
-				</p>
+				</h1>
 				<p className="sm-text light-text my-4">
-					Lorem ipsum dolor amet, consectetur adipiscing elit, sed
-					eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco
-					laboris nisi ut aliquip laborum.
+					At ComfyAir we pride ourselves in our experience and
+					abilities to take care of the needs and wants of every
+					single of our customers. We have been operating in Salt Lake
+					City for almost 20 years now and loving it!
 				</p>
 				<div className="">
-					<Button className="md-btn bold-text" to="/about">
+					<Button
+						className="md-btn bold-text"
+						to="/about/#about-page-header">
 						Learn More
 					</Button>
 				</div>

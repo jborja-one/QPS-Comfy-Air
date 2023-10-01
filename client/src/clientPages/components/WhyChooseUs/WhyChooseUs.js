@@ -27,7 +27,7 @@ const WhyChooseUs = () => {
 								Experienced Team
 							</h3>
 							<p className="sm-text light-text why-choose-us_text my-4 py-3 px-3">
-								We own an extensive team of qualified
+								We have- an extensive team of qualified
 								professionals with a proven track record of
 								rendering quality work.
 							</p>
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
 							<p className="sm-text light-text why-choose-us_text my-4 py-3 px-3">
 								As we aim to ensure that the best quality
 								services are available for everyone, all our
-								works are priced at genuine, competent rates.
+								works are priced at genuine, competitive rates.
 							</p>
 						</div>
 					</div>

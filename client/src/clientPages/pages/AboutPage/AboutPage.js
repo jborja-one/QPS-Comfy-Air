@@ -3,6 +3,7 @@ import React from 'react';
 import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
 import Services from '../../components/ServiceCards/ServiceCards';
 import MainNav from '../../../shared/components/Navigation/MainNav';
+import Footer from '../../components/Footer/Footer';
 
 import RicharPhoto from '../../../images/richar-photo.jpeg';
 import AboutUs from '../../../images/about-us-header.jpeg';
@@ -12,7 +13,9 @@ import './AboutPage.css';
 const AboutPage = () => {
 	return (
 		<React.Fragment>
-			<div className="about-page-header mb-5 position-relative">
+			<div
+				className="about-page-header mb-5 position-relative"
+				id="about-page-header">
 				<div className="position-relative">
 					<img
 						className="img-fluid"
@@ -108,6 +111,7 @@ const AboutPage = () => {
 			</div>
 			<WhyChooseUs />
 			<Services />
+			<Footer />
 		</React.Fragment>
 	);
 };

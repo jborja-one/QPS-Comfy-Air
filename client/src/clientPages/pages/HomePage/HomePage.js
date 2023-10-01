@@ -6,12 +6,14 @@ import InfoCards from '../../components/InfoCards/InfoCards';
 import AboutSection from '../../components/AboutSection/AboutSection';
 import Services from '../../components/ServiceCards/ServiceCards';
 import WhyChooseUs from '../../components/WhyChooseUs/WhyChooseUs';
+import Footer from '../../components/Footer/Footer';
 
 import Home_img from '../../../images/home-img.jpeg';
 
 import './HomePage.css';
 import HeatColdBar from '../../components/HeatColdBar/HeatColdBar';
 import Reviews from '../Reviews/Reviews';
+
 const HomePage = () => {
 	return (
 		<div>
@@ -40,7 +42,8 @@ const HomePage = () => {
 			<Services />
 			<WhyChooseUs />
 			<HeatColdBar />
-			{/* <Reviews /> */}
+			<Reviews />
+			<Footer />
 		</div>
 	);
 };

@@ -16,6 +16,7 @@ import ContactHeader from '../../../images/contact-header.jpeg';
 import User from '../../../images/user.jpeg';
 import emailjs from '@emailjs/browser';
 import './ContactPage.css';
+import Footer from '../../components/Footer/Footer';
 
 function ContactPage() {
 	const dispatch = useDispatch();
@@ -129,7 +130,7 @@ function ContactPage() {
 							</h3>
 							<form onSubmit={handleSubmit}>
 								<div className="d-flex w-100 justify-content-between ">
-									<div className="form-floating w-100">
+									<div className="form-floating w-100 mx-1">
 										<input
 											type="text"
 											name="fullName"
@@ -149,7 +150,7 @@ function ContactPage() {
 											Full Name
 										</label>
 									</div>
-									<div class="form-floating w-100">
+									<div class="form-floating w-100 mx-1">
 										<input
 											type="text"
 											name="phoneNumber"
@@ -171,7 +172,7 @@ function ContactPage() {
 									</div>
 								</div>
 								<div className="d-flex w-100 justify-content-between ">
-									<div class="form-floating my-4 w-100">
+									<div class="form-floating my-4 w-100 mx-1">
 										<input
 											type="email"
 											name="email"
@@ -191,7 +192,7 @@ function ContactPage() {
 											Email Address
 										</label>
 									</div>
-									<div class="form-floating my-4 w-100">
+									<div class="form-floating my-4 w-100 mx-1">
 										<select
 											name="service"
 											value={service}
@@ -258,6 +259,7 @@ function ContactPage() {
 			</div>
 			<InfoCards />
 			<WhyChooseUs />
+			<Footer />
 		</>
 	);
 }

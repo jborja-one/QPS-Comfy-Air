@@ -6,6 +6,7 @@ import InfoCards from '../../components/InfoCards/InfoCards';
 import Reviews from '../Reviews/Reviews';
 import ServiceAC from '../../../images/services-ac.jpeg';
 import ChooseUs from '../../../images/why-choose-us.jpeg';
+import Footer from '../../components/Footer/Footer';
 import './ServiceCoolingPage.css';
 
 function ServiceCoolingPage() {
@@ -163,7 +164,7 @@ function ServiceCoolingPage() {
 			</div>
 			<div>
 				<div className="d-flex justify-content-center my-5">
-					<a className="lg-btn bold-text" href="/contact-us">
+					<a className="lg-btn bold-text" href="/contact">
 						Get a Free Quote
 					</a>
 				</div>
@@ -173,6 +174,7 @@ function ServiceCoolingPage() {
 			</div> */}
 			<InfoCards />
 			<Reviews />
+			<Footer />
 		</>
 	);
 }
