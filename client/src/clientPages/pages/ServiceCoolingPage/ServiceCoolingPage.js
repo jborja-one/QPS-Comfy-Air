@@ -49,14 +49,14 @@ function ServiceCoolingPage() {
 										Cooling Services
 									</h2>
 									<p className="service-page_content-text mt-4 ms-5 sm-text light-text">
-										loremIpsum is simply dummy text of the
-										printing and typesetting industry. Lorem
-										Ipsum has been the industry's standard
-										dummy text ever since the 1500s, when an
-										unknown printer took a galley of type
-										and scrambled it to make a type specimen
-										book. It has survived not only five
-										centuries, but also the leap
+										Are you tired of sweltering summers and
+										unreliable cooling systems? Look no
+										further! At ComfyAir, we're dedicated to
+										transforming your living space into a
+										haven of comfort and relaxation. With
+										our top-notch air conditioning services,
+										you'll experience a new level of cool,
+										crisp, and refreshing indoor air.
 									</p>
 								</div>
 							</div>

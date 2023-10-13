@@ -48,14 +48,16 @@ function ServiceHeatingPage() {
 										Heating Services
 									</h2>
 									<p className="service-page_content-text mt-4 ms-5 sm-text light-text">
-										loremIpsum is simply dummy text of the
-										printing and typesetting industry. Lorem
-										Ipsum has been the industry's standard
-										dummy text ever since the 1500s, when an
-										unknown printer took a galley of type
-										and scrambled it to make a type specimen
-										book. It has survived not only five
-										centuries, but also the leap
+										We specialize in providing top-notch
+										heating solutions to ensure comfort and
+										coziness in your home.Choosing ComfyAir
+										means choosing excellence, reliability,
+										and comfort. We're dedicated to ensuring
+										your home remains warm and welcoming, no
+										matter the weather outside. If you're
+										ready to take your home's heating to the
+										next level, we're here to make it
+										happen.
 									</p>
 								</div>
 							</div>

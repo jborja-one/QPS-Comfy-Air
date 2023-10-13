@@ -68,7 +68,7 @@ function App() {
 					path="/dashboard/clients/:id"
 					element={<EachClientPage />}
 				/>
-				{/* <Route path="/dashboard/quotes" element={<QuotesPage />} /> */}
+				<Route path="/dashboard/quotes" element={<QuotesPage />} />
 				<Route
 					path="/dashboard/quotes/:id"
 					element={<SingleQuotePage />}

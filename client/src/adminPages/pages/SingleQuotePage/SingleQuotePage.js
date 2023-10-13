@@ -40,13 +40,15 @@ const SingleQuotePage = () => {
 				<DashboardMenu />
 			</div>
 			<div className="col-md-8 d-flex my-60">
-				<div className="container">
-					<div className="mb-60">
-						<Link className="reg-text" to="/dashboard/quotes">
-							Back to Quotes
-						</Link>
-					</div>
-					{project && project.client && (
+				{project && project.client && (
+					<div className="container">
+						<div className="mb-60">
+							<Link
+								className="reg-text"
+								to={`/dashboard/clients/${project.client._id}`}>
+								Back to Client
+							</Link>
+						</div>
 						<div className="document-container">
 							<div className="document-header d-flex justify-content-between align-items-center">
 								<h1 className="lg-text bold-text ">
@@ -273,8 +275,8 @@ const SingleQuotePage = () => {
 								</table>
 							</div>
 						</div>
-					)}
-				</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);

@@ -53,6 +53,8 @@ export const getAllProjects = () => async (dispatch) => {
 
 		const { data } = await axios.get('/api/projects');
 
+		console.log(data + '&&&&&&&&&&&&&&&');
+
 		dispatch({
 			type: GET_ALL_PROJECTS_SUCCESS,
 			payload: data.projects,

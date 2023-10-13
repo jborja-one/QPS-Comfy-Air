@@ -48,14 +48,17 @@ function ServiceMaintenancePage() {
 										Maintenance & Repair
 									</h2>
 									<p className="service-page_content-text mt-4 ms-5 sm-text light-text">
-										loremIpsum is simply dummy text of the
-										printing and typesetting industry. Lorem
-										Ipsum has been the industry's standard
-										dummy text ever since the 1500s, when an
-										unknown printer took a galley of type
-										and scrambled it to make a type specimen
-										book. It has survived not only five
-										centuries, but also the leap
+										Are you tired of sweltering summers and
+										chilly winters? It's time to take
+										control of your indoor climate and enjoy
+										year-round comfort. I'm here to
+										introduce you to our exceptional Air
+										Conditioning and Heating Repair
+										Services. With our expertise and
+										commitment to quality, we guarantee you
+										a seamless and worry-free experience.
+										Let's transform your home into the
+										sanctuary you deserve!"
 									</p>
 								</div>
 							</div>

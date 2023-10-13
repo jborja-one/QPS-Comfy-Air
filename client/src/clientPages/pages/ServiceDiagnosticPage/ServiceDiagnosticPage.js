@@ -48,14 +48,16 @@ function ServiceDiagnosticPage() {
 										Diagnostic Services
 									</h2>
 									<p className="service-page_content-text mt-4 ms-5 sm-text light-text">
-										loremIpsum is simply dummy text of the
-										printing and typesetting industry. Lorem
-										Ipsum has been the industry's standard
-										dummy text ever since the 1500s, when an
-										unknown printer took a galley of type
-										and scrambled it to make a type specimen
-										book. It has survived not only five
-										centuries, but also the leap
+										Are you tired of unpredictable
+										temperature fluctuations, rising energy
+										bills, and the discomfort of a
+										malfunctioning HVAC system? We
+										understand your concerns, and we're here
+										to offer you the ultimate solution. Our
+										cutting-edge Air Conditioning and
+										Heating Diagnostic service will not only
+										save you money but also provide you with
+										the peace of mind you deserve.
 									</p>
 								</div>
 							</div>

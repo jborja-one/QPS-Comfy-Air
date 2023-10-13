@@ -29,9 +29,9 @@ const EachClientPage = (props) => {
 			return phoneArr.join('');
 		}
 	};
-	if (client) {
-		console.log(client);
-	}
+	// if (client) {
+	// 	console.log(client);
+	// }
 
 	return (
 		<div className="row">
