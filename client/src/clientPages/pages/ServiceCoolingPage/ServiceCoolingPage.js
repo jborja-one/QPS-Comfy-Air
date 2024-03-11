@@ -173,7 +173,7 @@ function ServiceCoolingPage() {
 				<div className='md-btn'></div>
 			</div> */}
 			<InfoCards />
-			<Reviews />
+			{/* <Reviews /> */}
 			<Footer />
 		</>
 	);

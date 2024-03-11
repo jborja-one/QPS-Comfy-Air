@@ -9,7 +9,7 @@ const Reviews = () => {
 	const dispatch = useDispatch();
 
 	const { reviews } = useSelector((state) => state.reviews);
-
+	console.log(reviews);
 	useEffect(() => {
 		dispatch(getReviews());
 		dispatch(clearErrors());

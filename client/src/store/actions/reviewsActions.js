@@ -12,7 +12,7 @@ export const getReviews = () => async (dispatch) => {
 		dispatch({ type: REVIEW_REQUEST });
 
 		const { data } = await axios.get('/api/reviews');
-
+		console.log(data);
 		dispatch({
 			type: REVIEW_SUCCESS,
 			payload: data,
@@ -20,7 +20,10 @@ export const getReviews = () => async (dispatch) => {
 	} catch (error) {
 		dispatch({
 			type: REVIEW_FAIL,
-			payload: error.response.data.message,
+			payload:
+				error.response && error.response.data.message
+					? error.response.data.message
+					: error.message,
 		});
 	}
 };

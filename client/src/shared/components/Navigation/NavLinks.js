@@ -45,7 +45,7 @@ const NavLinks = () => {
 				</NavLink>
 			</li>
 
-			<li>
+			{/* <li>
 				{user && user.isAuthenticated ? (
 					<NavLink
 						className="nav-links"
@@ -58,7 +58,7 @@ const NavLinks = () => {
 						ADMIN LOGIN
 					</NavLink>
 				)}
-			</li>
+			</li> */}
 			<li>
 				<Button className="btn" inverse>
 					<p className="bold-text reg-text">Book Now</p>

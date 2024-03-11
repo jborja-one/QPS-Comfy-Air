@@ -174,7 +174,7 @@ function ServiceHeatingPage() {
 				<div className='md-btn'></div>
 			</div> */}
 			<InfoCards />
-			<Reviews />
+			{/* <Reviews /> */}
 			<Footer />
 		</>
 	);
