@@ -2,20 +2,20 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Button from '../FormElements/Button';
+// import Button from '../FormElements/Button';
 
-import { logout } from '../../../store/actions/userActions';
+// import { logout } from '../../../store/actions/userActions';
 
 import './NavLinks.css';
 
 const NavLinks = () => {
 	const dispatch = useDispatch();
-	const user = useSelector((state) => state.user);
+	// const user = useSelector((state) => state.user);
 
-	const onLogout = (e) => {
-		e.preventDefault();
-		dispatch(logout());
-	};
+	// const onLogout = (e) => {
+	// 	e.preventDefault();
+	// 	dispatch(logout());
+	// };
 
 	return (
 		<ul className="nav-links__container">
@@ -60,9 +60,9 @@ const NavLinks = () => {
 				)}
 			</li> */}
 			<li>
-				<Button className="btn" inverse>
+				<NavLink className="btn" inverse to="/contact">
 					<p className="bold-text reg-text">Book Now</p>
-				</Button>
+				</NavLink>
 			</li>
 		</ul>
 	);
